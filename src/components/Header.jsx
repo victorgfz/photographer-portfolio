@@ -1,12 +1,17 @@
 import React from "react";
 import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
-import Socials from "./Socials";
+import { IoLogoInstagram } from "react-icons/io";
+import { IoLogoBehance } from "react-icons/io5";
+
+import MobileNav from "./MobileNav";
 
 const Header = () => {
+  const [mobile, setMobile] = React.useState(false);
+
   return (
-    <header className="w-full h-[150px] flex justify-center items-center z-10 fixed bg-transparent">
-      <div className="container flex justify-between items-center">
+    <header className="w-full h-[70px] md:h-[150px] flex justify-center items-center z-10 fixed bg-transparent">
+      <div className="container flex justify-between items-center px-5 md:px-0">
         <Link to={"/"}>
           <svg
             className="fill-white"
@@ -29,24 +34,33 @@ const Header = () => {
             <g id="Layer_2"></g>
           </svg>
         </Link>
-        <ul className="flex gap-5 text-white uppercase font-bold text-[12px]">
-          <li className="px-5 py-2">
-            <Link to={"/"}>Home</Link>
-          </li>
+        <nav className="hidden md:flex gap-5 text-white uppercase font-bold text-[12px]">
+          <Link className="px-5 py-2" to={"/"}>
+            Home
+          </Link>
 
-          <li className="px-5 py-2">
-            <Link to={"/about"}>About</Link>
-          </li>
+          <Link className="px-5 py-2" to={"/about"}>
+            About
+          </Link>
 
-          <li className="px-5 py-2">
-            <Link to={"/portfolio"}>Portfolio</Link>
-          </li>
+          <Link className="px-5 py-2" to={"/portfolio"}>
+            Portfolio
+          </Link>
 
-          <li className="px-5 py-2">
-            <Link to={"/contact"}>Contact</Link>
-          </li>
-        </ul>
-        <Socials />
+          <Link className="px-5 py-2" to={"/contact"}>
+            Contact
+          </Link>
+        </nav>
+        <div className="hidden md:flex gap-5">
+          <a href="https://behance.net" target="__blank">
+            <IoLogoBehance className="text-[24px] text-white" />
+          </a>
+          <a href="https://instagram.com/" target="__blank">
+            <IoLogoInstagram className="text-[24px] text-white" />
+          </a>
+        </div>
+
+        <MobileNav value={mobile} setValue={setMobile} />
       </div>
     </header>
   );
