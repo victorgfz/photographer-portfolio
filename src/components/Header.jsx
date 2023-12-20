@@ -10,16 +10,16 @@ const Header = () => {
   const [mobile, setMobile] = React.useState(false);
 
   return (
-    <header className="w-full h-[70px] md:h-[150px] flex justify-center items-center z-10 fixed bg-transparent">
-      <div className="container flex justify-between items-center px-5 md:px-0">
+    <header className="w-full h-[100px] md:h-[150px] flex justify-center items-center z-20 fixed bg-transparent">
+      <div className="container flex justify-between items-center px-5">
         <Link to={"/"}>
           <svg
             className="fill-white"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 50 50"
-            width="50px"
-            height="50px"
+            width="36px"
+            height="36px"
           >
             <g id="Layer_1">
               <g>
@@ -35,19 +35,31 @@ const Header = () => {
           </svg>
         </Link>
         <nav className="hidden md:flex gap-5 text-white uppercase font-bold text-[12px]">
-          <Link className="px-5 py-2" to={"/"}>
+          <Link
+            className="px-5 py-2 relative flex flex-col items-center hover:after:w-6/12 after:duration-300 after:w-0 after:h-[1px] after:absolute after:bottom-0 after:bg-white"
+            to={"/"}
+          >
             Home
           </Link>
 
-          <Link className="px-5 py-2" to={"/about"}>
+          <Link
+            className="px-5 py-2 relative flex flex-col items-center hover:after:w-6/12 after:duration-300 after:w-0 after:h-[1px] after:absolute after:bottom-0 after:bg-white"
+            to={"/about"}
+          >
             About
           </Link>
 
-          <Link className="px-5 py-2" to={"/portfolio"}>
+          <Link
+            className="px-5 py-2 relative flex flex-col items-center hover:after:w-6/12 after:duration-300 after:w-0 after:h-[1px] after:absolute after:bottom-0 after:bg-white"
+            to={"/portfolio"}
+          >
             Portfolio
           </Link>
 
-          <Link className="px-5 py-2" to={"/contact"}>
+          <Link
+            className="px-5 py-2 relative flex flex-col items-center hover:after:w-6/12 after:duration-300 after:w-0 after:h-[1px] after:absolute after:bottom-0 after:bg-white"
+            to={"/contact"}
+          >
             Contact
           </Link>
         </nav>
