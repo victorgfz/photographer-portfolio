@@ -7,9 +7,14 @@ export default {
   theme: {
     fontFamily: {
       sans: ['Montserrat', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      serif: ['Georgia', 'serif'],
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        'alternative': ['Unbounded', 'serif'],
+      }
+      
+    },
   },
   plugins: [],
 }
