@@ -3,7 +3,7 @@ import AboutImg from "../assets/about.jpg";
 import { Link } from "react-router-dom";
 const About = () => {
   return (
-    <div className="bg-[#111] h-screen w-full overflow-hidden flex justify-center items-center">
+    <section className="bg-[#111] h-screen w-full overflow-hidden flex justify-center items-center">
       <div className="container px-5 z-10 text-white flex items-center md:items-end flex-col">
         <h1 className="font-alternative uppercase font-bold text-center md:text-right text-[60px]  lg:text-[80px] xl:text-[100px] xxl:text-[120px] leading-[60px] lg:leading-[80px] xl:leading-[100px] xxl:leading-[120px] max-w-[300px] md:max-w-full break-words">
           about me
@@ -31,7 +31,7 @@ const About = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

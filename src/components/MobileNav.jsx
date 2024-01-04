@@ -37,7 +37,7 @@ const MobileNav = ({ value, setValue }) => {
         ref={menu}
         className={`fixed ${
           value ? "right-0" : "-right-full"
-        } flex duration-300 flex-col top-0 h-screen w-8/12 sm:w-10/12 align-start bg-white text-[#111] uppercase font-bold text-[12px] z-30`}
+        } flex duration-300 flex-col top-0 h-screen w-8/12 sm:w-10/12 align-start bg-white text-[#111] uppercase font-bold text-[12px] z-30 drop-shadow`}
       >
         <div className="p-5 border-[1px] border-b-[#eee] flex justify-end">
           <IoMdClose
