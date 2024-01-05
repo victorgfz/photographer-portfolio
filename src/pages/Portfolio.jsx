@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ImgPortfolio1 from "../assets/portfolio1.jpg";
-import ImgPortfolio2 from "../assets/portfolio2.jpg";
-import ImgPortfolio3 from "../assets/portfolio3.jpg";
-import ImgPortfolio4 from "../assets/portfolio4.jpg";
+import PortfolioImg1 from "../assets/portfolio1.jpg";
+import PortfolioImg2 from "../assets/portfolio2.jpg";
+import PortfolioImg3 from "../assets/portfolio3.jpg";
+import PortfolioImg4 from "../assets/portfolio4.jpg";
 
 const Portfolio = () => {
   return (
@@ -23,8 +23,37 @@ const Portfolio = () => {
           hire me
         </Link>
       </div>
-      <div className="fixed top-0 w-full z-0 flex justify-end">
-        <div className="w-full md:w-6/12 max-h-screen h-full grid grid-cols-2 place-items-stretch gap-3"></div>
+      <div className="fixed top-0 w-full h-full z-0 flex justify-end">
+        <div className="w-full md:w-6/12 grid grid-cols-2 gap-2">
+          <div className="overflow-hidden bg-black">
+            <img
+              className="object-cover object-center w-full h-full saturate-0  opacity-50"
+              src={PortfolioImg1}
+              alt=""
+            />
+          </div>
+          <div className="overflow-hidden bg-black">
+            <img
+              className="object-cover object-center w-full h-full saturate-0  opacity-50"
+              src={PortfolioImg2}
+              alt=""
+            />
+          </div>
+          <div className="overflow-hidden bg-black">
+            <img
+              className="object-cover object-center w-full h-full saturate-0  opacity-50"
+              src={PortfolioImg3}
+              alt=""
+            />
+          </div>
+          <div className="overflow-hidden bg-black">
+            <img
+              className="object-cover object-center w-full h-full saturate-0  opacity-50"
+              src={PortfolioImg4}
+              alt=""
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
