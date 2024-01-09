@@ -1,11 +1,21 @@
 import React from "react";
 import HomeImg from "../assets/home.jpg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { transition1 } from "../transitions";
+import { CursorContext } from "../context/CursorContext";
 
 const Home = () => {
+  const { CursosVariants } = React.useContext(CursorContext);
   return (
     <section className="bg-[#111] h-screen w-full overflow-hidden flex justify-center items-center">
-      <div className="container px-5 z-10 text-white flex items-center md:items-start flex-col">
+      <motion.div
+        initial={{ opacity: 0, y: "-50%" }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: "50%" }}
+        transition={transition1}
+        className="container px-5 z-10 text-white flex items-center md:items-start flex-col"
+      >
         <h1 className="font-alternative uppercase font-bold text-center md:text-left text-[60px]  lg:text-[80px] xl:text-[100px] xxl:text-[120px] leading-[60px] lg:leading-[80px] xl:leading-[100px] xxl:leading-[120px] max-w-[300px] md:max-w-full break-words">
           hi, i'm a photographer
         </h1>
@@ -19,15 +29,23 @@ const Home = () => {
         >
           hire me
         </Link>
-      </div>
+      </motion.div>
       <div className="fixed top-0 w-full z-0 flex justify-end">
-        <div className="w-full md:w-6/12 h-full bg-black">
-          <img
+        <motion.div
+          initial={{ scale: 1, x: "100%" }}
+          animate={{ scale: 1, x: 0 }}
+          exit={{ scale: 0, x: 0 }}
+          transition={transition1}
+          className="w-full md:w-6/12 h-full bg-black overflow-hidden"
+        >
+          <motion.img
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.7, ease: "backInOut" }}
             className="max-w-full w-full h-screen object-cover object-center saturate-0 opacity-50"
             src={HomeImg}
             alt=""
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

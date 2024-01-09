@@ -5,10 +5,19 @@ import PortfolioImg2 from "../assets/portfolio2.jpg";
 import PortfolioImg3 from "../assets/portfolio3.jpg";
 import PortfolioImg4 from "../assets/portfolio4.jpg";
 
+import { motion } from "framer-motion";
+import { transition1 } from "../transitions";
+
 const Portfolio = () => {
   return (
     <section className="bg-[#111] h-screen w-full overflow-hidden flex justify-center items-center">
-      <div className="container px-5 z-10 text-white flex items-center md:items-start flex-col">
+      <motion.div
+        initial={{ opacity: 0, y: "-50%" }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: "50%" }}
+        transition={transition1}
+        className="container px-5 z-10 text-white flex items-center md:items-start flex-col"
+      >
         <h1 className="font-alternative uppercase font-bold text-center md:text-left text-[60px] lg:text-[80px] xl:text-[100px] xxl:text-[120px] leading-[60px] lg:leading-[80px] xl:leading-[100px] xxl:leading-[120px] max-w-[300px] md:max-w-full break-words">
           my work
         </h1>
@@ -22,37 +31,73 @@ const Portfolio = () => {
         >
           hire me
         </Link>
-      </div>
+      </motion.div>
       <div className="fixed top-0 w-full h-full z-0 flex justify-end">
         <div className="w-full md:w-6/12 grid grid-cols-2 gap-2">
-          <div className="overflow-hidden bg-black">
+          <motion.div
+            initial={{ scale: 1, y: "-100%" }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0, y: 0 }}
+            transition={{
+              ...transition1,
+              delay: 0,
+            }}
+            className="overflow-hidden bg-black"
+          >
             <img
               className="object-cover object-center w-full h-full saturate-0  opacity-50"
               src={PortfolioImg1}
               alt=""
             />
-          </div>
-          <div className="overflow-hidden bg-black">
+          </motion.div>
+          <motion.div
+            initial={{ scale: 1, y: "-100%" }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0, y: 0 }}
+            transition={{
+              ...transition1,
+              delay: 0.2,
+            }}
+            className="overflow-hidden bg-black"
+          >
             <img
               className="object-cover object-center w-full h-full saturate-0  opacity-50"
               src={PortfolioImg2}
               alt=""
             />
-          </div>
-          <div className="overflow-hidden bg-black">
+          </motion.div>
+          <motion.div
+            initial={{ scale: 1, y: "100%" }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0, y: 0 }}
+            transition={{
+              ...transition1,
+              delay: 0.1,
+            }}
+            className="overflow-hidden bg-black"
+          >
             <img
               className="object-cover object-center w-full h-full saturate-0  opacity-50"
               src={PortfolioImg3}
               alt=""
             />
-          </div>
-          <div className="overflow-hidden bg-black">
+          </motion.div>
+          <motion.div
+            initial={{ scale: 1, y: "100%" }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0, y: 0 }}
+            transition={{
+              ...transition1,
+              delay: 0.3,
+            }}
+            className="overflow-hidden bg-black"
+          >
             <img
               className="object-cover object-center w-full h-full saturate-0  opacity-50"
               src={PortfolioImg4}
               alt=""
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
