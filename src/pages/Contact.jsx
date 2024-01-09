@@ -1,14 +1,28 @@
 import React from "react";
 import Input from "../components/Input";
+import { motion } from "framer-motion";
+import { transition1 } from "../transitions";
 
 const Contact = () => {
   return (
-    <section className="bg-[#111] h-screen w-full after:fixed after:bottom-0 after:w-full after:h-3/5 after:bg-white after:z-0 overflow-hidden flex justify-center items-center">
+    <section className="bg-[#111] h-screen w-full overflow-hidden flex justify-center items-center">
       <div className="container px-5 flex flex-col justify-center items-center z-10">
-        <h1 className="font-alternative uppercase font-bold text-white mb-[96px] text-center text-[60px] lg:text-[80px] xl:text-[100px] xxl:text-[120px] leading-[60px] lg:leading-[80px] xl:leading-[100px] xxl:leading-[120px] max-w-[300px] md:max-w-full break-words">
+        <motion.h1
+          initial={{ opacity: 0, y: "-50%" }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: "-50%" }}
+          transition={transition1}
+          className="font-alternative uppercase font-bold text-white mb-[96px] text-center text-[60px] lg:text-[80px] xl:text-[100px] xxl:text-[120px] leading-[60px] lg:leading-[80px] xl:leading-[100px] xxl:leading-[120px] max-w-[300px] md:max-w-full break-words"
+        >
           get in touch
-        </h1>
-        <form className="flex flex-wrap justify-center gap-5">
+        </motion.h1>
+        <motion.form
+          initial={{ opacity: 0, y: "50%" }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: "50%" }}
+          transition={transition1}
+          className="flex flex-wrap justify-center gap-5"
+        >
           <Input type="text" placeholder="Name" id="name" name="name" />
           <Input type="email" placeholder="Email" id="email" name="email" />
           <Input
@@ -23,8 +37,15 @@ const Contact = () => {
           >
             Send a message
           </button>
-        </form>
+        </motion.form>
       </div>
+      <motion.div
+        initial={{ y: "50%" }}
+        animate={{ y: 0 }}
+        exit={{ y: "50%" }}
+        transition={{ duration: 0.7, ease: "easeInOut" }}
+        className="fixed bottom-0 w-full h-3/5 bg-white z-0"
+      ></motion.div>
     </section>
   );
 };

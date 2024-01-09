@@ -44,7 +44,9 @@ const Portfolio = () => {
             }}
             className="overflow-hidden bg-black"
           >
-            <img
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.7, ease: "backInOut" }}
               className="object-cover object-center w-full h-full saturate-0  opacity-50"
               src={PortfolioImg1}
               alt=""
@@ -60,7 +62,9 @@ const Portfolio = () => {
             }}
             className="overflow-hidden bg-black"
           >
-            <img
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.7, ease: "backInOut" }}
               className="object-cover object-center w-full h-full saturate-0  opacity-50"
               src={PortfolioImg2}
               alt=""
@@ -76,7 +80,9 @@ const Portfolio = () => {
             }}
             className="overflow-hidden bg-black"
           >
-            <img
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.7, ease: "backInOut" }}
               className="object-cover object-center w-full h-full saturate-0  opacity-50"
               src={PortfolioImg3}
               alt=""
@@ -92,7 +98,9 @@ const Portfolio = () => {
             }}
             className="overflow-hidden bg-black"
           >
-            <img
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.7, ease: "backInOut" }}
               className="object-cover object-center w-full h-full saturate-0  opacity-50"
               src={PortfolioImg4}
               alt=""

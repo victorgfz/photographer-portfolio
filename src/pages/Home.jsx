@@ -3,10 +3,8 @@ import HomeImg from "../assets/home.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { transition1 } from "../transitions";
-import { CursorContext } from "../context/CursorContext";
 
 const Home = () => {
-  const { CursosVariants } = React.useContext(CursorContext);
   return (
     <section className="bg-[#111] h-screen w-full overflow-hidden flex justify-center items-center">
       <motion.div
@@ -38,9 +36,7 @@ const Home = () => {
           transition={transition1}
           className="w-full md:w-6/12 h-full bg-black overflow-hidden"
         >
-          <motion.img
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.7, ease: "backInOut" }}
+          <img
             className="max-w-full w-full h-screen object-cover object-center saturate-0 opacity-50"
             src={HomeImg}
             alt=""
